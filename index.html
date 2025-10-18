@@ -76,7 +76,7 @@
         <script>
           const now = new Date();
           let year = now.getFullYear();
-          const eventDate = new Date(`${year}-10-20T00:00:00`);
+          const eventDate = new Date(`${year}-10-20T00:00:00+07:00`);
           if (now > eventDate) eventDate.setFullYear(year + 1);
           const daysLeft = Math.ceil((eventDate - now) / 86400000);
           document.write(daysLeft ? `${daysLeft} ngày nữa đến 20/10! 💐` : "Hôm nay là 20/10! 🌸");
