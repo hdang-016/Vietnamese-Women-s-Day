@@ -2,14 +2,14 @@
 <html lang="vi">
   <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3YDQMK3GL0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3YDQMK3GL0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3YDQMK3GL0');
+    </script>
 
-  gtag('config', 'G-3YDQMK3GL0');
-</script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -28,11 +28,13 @@
     />
   </head>
 
-  <body style="min-height: fit-content">
-    <div class="video-container">
+  <body style="min-height: fit-content;">
+
+    <div class="video-container" id="video-container">
       <video id="video" preload="none" autoplay playsinline muted>
         <source src="assets/videos/Video-1.mp4" type="video/mp4" />
       </video>
+
       <div
         style="
           position: absolute;
@@ -47,11 +49,54 @@
         "
         id="overlay"
       ></div>
-      <audio id="background-audio" autoplay loop muted>
+
+      <audio id="background-audio" loop>
         <source src="assets/music/Love Story.mp3" type="audio/mpeg" />
       </audio>
     </div>
-    <h1 class="header">Nam A10 chúc bạn nữ một ngày 20/10 vui vẻ.🥰</h1>
+
+    <h1 class="header">Nam A10 chúc bạn một ngày 20/10 vui vẻ.🥰</h1>
+
+    <marquee scrolldelay="4">
+      <font
+        face="Audiowide"
+        size="4"
+        color="#ff66cc"
+        style="
+          text-shadow:
+            -1px -1px 0 black,
+            1px -1px 0 black,
+            -1px 1px 0 black,
+            1px 1px 0 black,
+            2px 2px 4px black;
+        "
+      >
+        <script>
+          const now = new Date();
+          let year = now.getFullYear();
+          const eventDate = new Date(`${year}-10-20T00:00:00`);
+          if (now > eventDate) eventDate.setFullYear(year + 1);
+          const daysLeft = Math.ceil((eventDate - now) / 86400000);
+          document.write(daysLeft ? `${daysLeft} ngày nữa đến 20/10! 💐` : "Hôm nay là 20/10! 🌸");
+        </script>
+      </font>
+    </marquee>
+
+    <p
+      id="click-to-play"
+      style="
+        text-align: center;
+        color: rgba(0, 0, 0, 0.7);
+        font-family: 'Pacifico', cursive;
+        font-size: 16px;
+        text-shadow: 2px 2px 3px black;
+        margin-top: -10px;
+        cursor: pointer;
+      "
+    >
+      (Bấm để mở nhạc 🎵)
+    </p>
+
     <button class="cards-shown-button" onclick="showCards()">
       Xem thông điệp hôm nay
     </button>
@@ -117,5 +162,13 @@
         </div>
       </button>
     </div>
+
+    <script>
+      document.getElementById("click-to-play").addEventListener("click", () => {
+        const audio = document.getElementById("background-audio");
+        audio.muted = false;
+        audio.play();
+      });
+    </script>
   </body>
 </html>
