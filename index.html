@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3YDQMK3GL0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3YDQMK3GL0');
+</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chúc mừng ngày 20/10</title>
+    <link
+      rel="icon"
+      href="assets/icon/christmas-star.png"
+      type="image/x-icon"
+    />
+  </head>
+
+  <body style="min-height: fit-content">
+    <div class="video-container">
+      <video id="video" preload="none" autoplay playsinline muted>
+        <source src="assets/videos/Video-1.mp4" type="video/mp4" />
+      </video>
+      <div
+        style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: hsla(329, 100%, 85%, 0.3);
+          pointer-events: none;
+          transition: all 0.1s ease;
+          opacity: 1;
+        "
+        id="overlay"
+      ></div>
+      <audio id="background-audio" autoplay loop muted>
+        <source src="assets/music/Love Story.mp3" type="audio/mpeg" />
+      </audio>
+    </div>
+    <h1 class="header">Nam A10 chúc bạn một ngày 20/10 vui vẻ.🥰</h1>
+    <button class="cards-shown-button" onclick="showCards()">
+      Xem thông điệp hôm nay
+    </button>
+
+    <div class="cards-container" id="cards-container">
+      <button
+        class="cards-button"
+        id="card-1"
+        onclick="flipCard(1)"
+        title="Flip Card 1"
+      >
+        <div class="card-inner">
+          <div class="card-front">
+            <img
+              class="cards-image"
+              src="assets/cards/Mặt trước.png"
+              alt="Mặt trước"
+            />
+          </div>
+          <div class="card-back">
+            <img class="cards-image" id="card-back-1" alt="Card back 1" />
+          </div>
+        </div>
+      </button>
+
+      <button
+        class="cards-button"
+        id="card-2"
+        onclick="flipCard(2)"
+        title="Flip Card 2"
+      >
+        <div class="card-inner">
+          <div class="card-front">
+            <img
+              class="cards-image"
+              src="assets/cards/Mặt trước.png"
+              alt="Mặt trước"
+            />
+          </div>
+          <div class="card-back">
+            <img class="cards-image" id="card-back-2" alt="Card back 2" />
+          </div>
+        </div>
+      </button>
+
+      <button
+        class="cards-button"
+        id="card-3"
+        onclick="flipCard(3)"
+        title="Flip Card 3"
+      >
+        <div class="card-inner">
+          <div class="card-front">
+            <img
+              class="cards-image"
+              src="assets/cards/Mặt trước.png"
+              alt="Mặt trước"
+            />
+          </div>
+          <div class="card-back">
+            <img class="cards-image" id="card-back-3" alt="Card back 3" />
+          </div>
+        </div>
+      </button>
+    </div>
+  </body>
+</html>
