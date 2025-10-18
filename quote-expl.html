@@ -88,11 +88,11 @@
         document.addEventListener("click", function handler() {
           if (audio.paused) {
             audio.muted = false; 
-            audio.volume = 1.0;
+            audio.volume = 0.6;
             audio.play();        
           } else {
             audio.muted = false; 
-            audio.volume = 1.0;
+            audio.volume = 0.6;
           }
           document.removeEventListener("click", handler);
         });
