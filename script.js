@@ -4,7 +4,7 @@ function getRandomInt(min, max) {
 
 document.addEventListener("DOMContentLoaded", function () {
   const audio = document.getElementById("background-audio");
-  audio.volume = 1.0;
+  audio.volume = 0.6;
   const overlay = document.getElementById("overlay");
 
   const video = document.getElementById("video");
