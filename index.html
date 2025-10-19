@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
   <head>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3YDQMK3GL0"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -31,9 +30,26 @@
   </head>
 
   <body style="min-height: fit-content;">
-
     <div class="video-container" id="video-container">
-      <video id="video" preload="none" autoplay playsinline muted>
+      <div
+        id="background-image"
+        style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-image: url('assets/avatar/flower.jpg');
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+          opacity: 1;
+          transition: opacity 0.5s ease;
+          pointer-events: none;
+        "
+      ></div>
+
+      <video id="video" preload="none" playsinline muted style="opacity: 0; transition: opacity 0.5s ease;">
         <source src="assets/videos/Video-1.mp4" type="video/mp4" />
       </video>
 
@@ -46,135 +62,143 @@
           height: 100%;
           background-color: hsla(329, 100%, 85%, 0.3);
           pointer-events: none;
-          transition: all 0.1s ease;
           opacity: 1;
         "
         id="overlay"
       ></div>
 
-      <audio id="background-audio" loop>
-        <source src="assets/music/Love Story.mp3" type="audio/mpeg" />
-      </audio>
-    </div>
+      <h1 class="header" style="margin-bottom: 5px;">
+        Nam A10 chúc bạn nữ một ngày 20/10 vui vẻ.🥰
+      </h1>
 
-    <h1 class="header">Nam A10 chúc bạn nữ một ngày 20/10 vui vẻ.🥰</h1>
+      <marquee scrolldelay="4">
+        <font
+          face="Audiowide"
+          size="4"
+          color="#ff66cc"
+          style="
+            text-shadow:
+              -1px -1px 0 black,
+              1px -1px 0 black,
+              -1px 1px 0 black,
+              1px 1px 0 black,
+              2px 2px 4px black;
+          "
+        >
+          <script>
+            const now = new Date();
+            let year = now.getFullYear();
+            const eventDate = new Date(`${year}-10-20T23:59:59+07:00`);
+            if (now > eventDate) eventDate.setFullYear(year + 1);
+            const daysLeft = Math.ceil((eventDate - now) / 86400000);
+            if (now.getDate() === 20 && now.getMonth() === 9) {
+              document.write("Hôm nay là 20/10! 🌸");
+            } else {
+              document.write(`${daysLeft} ngày nữa đến 20/10! 💐`);
+            }
+          </script>
+        </font>
+      </marquee>
 
-    <marquee scrolldelay="4">
-      <font
-        face="Audiowide"
-        size="4"
-        color="#ff66cc"
+      <button
+        class="cards-shown-button"
+        onclick="showCards()"
+        style="margin-bottom: 15px;"
+      >
+        Xem thông điệp hôm nay
+      </button>
+
+      <p
+        id="click-to-play"
         style="
-          text-shadow:
-            -1px -1px 0 black,
-            1px -1px 0 black,
-            -1px 1px 0 black,
-            1px 1px 0 black,
-            2px 2px 4px black;
+          text-align: center;
+          color: rgba(0, 0, 0, 0.7);
+          font-family: 'Pacifico', cursive;
+          font-size: 16px;
+          text-shadow: 2px 2px 3px black;
+          margin-top: 0;
+          cursor: pointer;
         "
       >
-        <script>
-          const now = new Date();
-          let year = now.getFullYear();
-          const eventDate = new Date(`${year}-10-20T23:59:59+07:00`);
-          if (now > eventDate) eventDate.setFullYear(year + 1);
-          const daysLeft = Math.ceil((eventDate - now) / 86400000);
-          if (now.getDate() === 20 && now.getMonth() === 9) {
-            document.write("Hôm nay là 20/10! 🌸");
-          } else {
-            document.write(`${daysLeft} ngày nữa đến 20/10! 💐`);
-          }
-        </script>
-      </font>
-    </marquee>
+        (Ấn bất kì để mở nhạc 🎵)
+      </p>
 
-    <p
-      id="click-to-play"
-      style="
-        text-align: center;
-        color: rgba(0, 0, 0, 0.7);
-        font-family: 'Pacifico', cursive;
-        font-size: 16px;
-        text-shadow: 2px 2px 3px black;
-        margin-top: -10px;
-        cursor: pointer;
-      "
-    >
-      (Ấn bất kì để mở nhạc 🎵)
-    </p>
+      <div class="cards-container" id="cards-container">
+        <button
+          class="cards-button"
+          id="card-1"
+          onclick="flipCard(1)"
+          title="Flip Card 1"
+        >
+          <div class="card-inner">
+            <div class="card-front">
+              <img
+                class="cards-image"
+                src="assets/cards/Mặt trước.png"
+                alt="Mặt trước"
+              />
+            </div>
+            <div class="card-back">
+              <img class="cards-image" id="card-back-1" alt="Card back 1" />
+            </div>
+          </div>
+        </button>
 
-    <button class="cards-shown-button" onclick="showCards()">
-      Xem thông điệp hôm nay
-    </button>
+        <button
+          class="cards-button"
+          id="card-2"
+          onclick="flipCard(2)"
+          title="Flip Card 2"
+        >
+          <div class="card-inner">
+            <div class="card-front">
+              <img
+                class="cards-image"
+                src="assets/cards/Mặt trước.png"
+                alt="Mặt trước"
+              />
+            </div>
+            <div class="card-back">
+              <img class="cards-image" id="card-back-2" alt="Card back 2" />
+            </div>
+          </div>
+        </button>
 
-    <div class="cards-container" id="cards-container">
-      <button
-        class="cards-button"
-        id="card-1"
-        onclick="flipCard(1)"
-        title="Flip Card 1"
-      >
-        <div class="card-inner">
-          <div class="card-front">
-            <img
-              class="cards-image"
-              src="assets/cards/Mặt trước.png"
-              alt="Mặt trước"
-            />
+        <button
+          class="cards-button"
+          id="card-3"
+          onclick="flipCard(3)"
+          title="Flip Card 3"
+        >
+          <div class="card-inner">
+            <div class="card-front">
+              <img
+                class="cards-image"
+                src="assets/cards/Mặt trước.png"
+                alt="Mặt trước"
+              />
+            </div>
+            <div class="card-back">
+              <img class="cards-image" id="card-back-3" alt="Card back 3" />
+            </div>
           </div>
-          <div class="card-back">
-            <img class="cards-image" id="card-back-1" alt="Card back 1" />
-          </div>
-        </div>
-      </button>
+        </button>
+      </div>
 
-      <button
-        class="cards-button"
-        id="card-2"
-        onclick="flipCard(2)"
-        title="Flip Card 2"
-      >
-        <div class="card-inner">
-          <div class="card-front">
-            <img
-              class="cards-image"
-              src="assets/cards/Mặt trước.png"
-              alt="Mặt trước"
-            />
-          </div>
-          <div class="card-back">
-            <img class="cards-image" id="card-back-2" alt="Card back 2" />
-          </div>
-        </div>
-      </button>
+      <script>
+        const backgroundImage = document.getElementById("background-image");
+        const overlay = document.getElementById("overlay");
+        const video = document.getElementById("video");
+        const container = document.getElementById("video-container");
 
-      <button
-        class="cards-button"
-        id="card-3"
-        onclick="flipCard(3)"
-        title="Flip Card 3"
-      >
-        <div class="card-inner">
-          <div class="card-front">
-            <img
-              class="cards-image"
-              src="assets/cards/Mặt trước.png"
-              alt="Mặt trước"
-            />
-          </div>
-          <div class="card-back">
-            <img class="cards-image" id="card-back-3" alt="Card back 3" />
-          </div>
-        </div>
-      </button>
+        container.addEventListener("click", (e) => {
+          if (e.target.closest("button")) return;
+          backgroundImage.style.opacity = "0";
+          video.style.opacity = "1";
+          video.muted = false;
+          video.play();
+        });
+      </script>
     </div>
-
-    <script>
-      document.getElementById("click-to-play").addEventListener("click", () => {
-        const audio = document.getElementById("background-audio");
-        audio.muted = false;
-        audio.play();
-      });
-    </script>
   </body>
 </html>
