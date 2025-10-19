@@ -1,6 +1,10 @@
+// Khi người dùng truy cập trang chính, xóa mọi lưu trữ cũ để khởi động lại từ đầu
 window.addEventListener("DOMContentLoaded", () => {
+  // Xoá toàn bộ localStorage và sessionStorage
   localStorage.clear();
   sessionStorage.clear();
+
+  // Xoá cookie bằng cách đặt hết hạn cho tất cả cookie hiện có
   document.cookie.split(";").forEach(cookie => {
     const eqPos = cookie.indexOf("=");
     const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
@@ -14,7 +18,7 @@ function getRandomInt(min, max) {
 
 document.addEventListener("DOMContentLoaded", function () {
   const audio = document.getElementById("background-audio");
-  audio.volume = 0.6;
+  audio.volume = 1.0;
   const overlay = document.getElementById("overlay");
 
   const video = document.getElementById("video");
@@ -137,17 +141,17 @@ function resetCards() {
       name: "Thành Luân",
       avatar: "assets/avatar/Luan-Ava.jpg",
       quote:
-        "Chúc bạn có một ngày 8/3 tràn đầy năng lượng, ý nghĩa và thật hạnh phúc. Luôn là những bông hoa tươi sáng với nụ cười luôn nở trên môi, đẹp gái nhất cái trường này.",
+        "Chúc bạn có một ngày 20/10 tràn đầy năng lượng, ý nghĩa và thật hạnh phúc. Luôn là những bông hoa tươi sáng với nụ cười luôn nở trên môi, đẹp gái nhất cái trường này.",
     }),
     (Khanh = {
       name: "Nhật Khánh",
       avatar: "assets/avatar/Khanh-Ava.jpg",
-      quote: "Chúc bạn 8/3 sẽ thật ý nghĩa và trọn vẹn nhất.",
+      quote: "Chúc bạn 20/10 sẽ thật ý nghĩa và trọn vẹn nhất.",
     }),
     (Huy = {
       name: "Ngọc Huy",
       avatar: "assets/avatar/Huy-Ava.jpg",
-      quote: "Chúc bạn 8/3 sẽ luôn toả sáng và rực rỡ.",
+      quote: "Chúc bạn 20/10 sẽ luôn toả sáng và rực rỡ.",
     }),
     (Thuan = {
       name: "Minh Thuận",
