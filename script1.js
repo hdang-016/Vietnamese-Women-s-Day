@@ -1,6 +1,10 @@
+// Khi người dùng truy cập trang chính, xóa mọi lưu trữ cũ để khởi động lại từ đầu
 window.addEventListener("DOMContentLoaded", () => {
+  // Xoá toàn bộ localStorage và sessionStorage
   localStorage.clear();
   sessionStorage.clear();
+
+  // Xoá cookie bằng cách đặt hết hạn cho tất cả cookie hiện có
   document.cookie.split(";").forEach(cookie => {
     const eqPos = cookie.indexOf("=");
     const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
@@ -188,31 +192,31 @@ function start() {
       name: "Thành Luân",
       avatar: "assets/avatar/Luan-Ava.jpg",
       quote: [
-        "Chúc bạn có một ngày 8/3 tràn đầy năng lượng, ý nghĩa và thật hạnh phúc. Luôn là những bông hoa tươi sáng với nụ cười luôn nở trên môi, đẹp gái nhất cái trường này",
+        "Chúc bạn có một ngày 20/10 tràn đầy năng lượng, ý nghĩa và thật hạnh phúc. Luôn là những bông hoa tươi sáng với nụ cười luôn nở trên môi, đẹp gái nhất cái trường này",
       ],
     }),
     (Khanh = {
       name: "Nhật Khánh",
       avatar: "assets/avatar/Khanh-Ava.jpg",
       quote: [
-        "Chúc bạn ngày 8/3 sẽ mãi là bông hoa tươi sáng giữa cuộc đời này nhé",
-        "Chúc bạn 8/3 và mọi ngày điều hạnh phúc",
-        "Chúc bạn 8/3 năm nay sẽ gặp được nhiều điều tốt lành",
-        "Chúc bạn 8/3 sẽ luôn là bông hoa xinh đẹp nhất của mọi người",
-        "Chúc bạn 8/3 luôn rạng ngời như ánh sáng mặt trời",
-        "Chúc bạn 8/3 sẽ luôn nở nụ cười trên môi",
+        "Chúc bạn ngày 20/10 sẽ mãi là bông hoa tươi sáng giữa cuộc đời này nhé",
+        "Chúc bạn 20/10 và mọi ngày điều hạnh phúc",
+        "Chúc bạn 20/10 năm nay sẽ gặp được nhiều điều tốt lành",
+        "Chúc bạn 20/10 sẽ luôn là bông hoa xinh đẹp nhất của mọi người",
+        "Chúc bạn 20/10 luôn rạng ngời như ánh sáng mặt trời",
+        "Chúc bạn 20/10 sẽ luôn nở nụ cười trên môi",
       ],
     }),
     (Huy = {
       name: "Ngọc Huy",
       avatar: "assets/avatar/Huy-Ava.jpg",
       quote: [
-        "Chúc bạn 8/3 sẽ luôn toả sáng và rực rỡ",
-        "Chúc bạn ngày 8/3 luôn hồn nhiên, xinh đẹp và có nhiều niềm vui",
-        "Chúc bạn 8/3 luôn tràn đầy niềm yêu thương",
-        "Chúc bạn 8/3 sẽ gặp được nhiều điều tốt lành",
-        "Chúc bạn 8/3 luôn rạng ngời và tràn đầy năng lượng",
-        "Chúc bạn 8/3 luôn xinh đẹp và quý phái",
+        "Chúc bạn 20/10 sẽ luôn toả sáng và rực rỡ",
+        "Chúc bạn ngày 20/10 luôn hồn nhiên, xinh đẹp và có nhiều niềm vui",
+        "Chúc bạn 20/10 luôn tràn đầy niềm yêu thương",
+        "Chúc bạn 20/10 sẽ gặp được nhiều điều tốt lành",
+        "Chúc bạn 20/10 luôn rạng ngời và tràn đầy năng lượng",
+        "Chúc bạn 20/10 luôn xinh đẹp và quý phái",
       ],
     }),
     (Thuan = {
@@ -220,16 +224,16 @@ function start() {
       avatar: "assets/avatar/Thuan-Ava.jpg",
       quote: [
         'Chúc "bông hoa" ngày nào cũng xinh đẹp như hôm nay, chúc cho bạn luôn tươi vui như vậy, như lúc đang cười mỉm khi đọc những dòng này vậy🥰',
-        "Chúc bạn ngày nào cũng là 8/3 như hôm nay",
+        "Chúc bạn ngày nào cũng là 20/10 như hôm nay",
         "Hy vọng mỗi sáng thức dậy, bạn vẫn còn nhớ mình là một bông hồng🌹",
-        "8/3 năm nay bạn đã xinh đẹp rạng ngời, mong 364 ngày còn lại cũng vậy, bạn nhé🥰",
+        "20/10 năm nay bạn đã xinh đẹp rạng ngời, mong 364 ngày còn lại cũng vậy, bạn nhé🥰",
         "Bạn không chỉ là một bông hoa tươi đẹp, bạn còn là một tia nắng cho thế giới, nhớ nhé✨",
         "Hãy luôn tỏa sáng theo cách của mình, bạn đặc biệt hơn bạn nghĩ☺️",
         "Chúc bạn ngày càng xinh đẹp, tiền đầy ví, crush để ý, cuộc sống dư vị🥰",
         "Hôm nay là ngày của bạn, nhưng mà thật ra ngày nào cũng là của bạn hết! Cứ xinh đẹp, vui vẻ và tận hưởng cuộc sống nhaaa👑",
         "Mần chi thì mần, rứa chứ cũng phải nhớ hôm nay là ngày đặc biệt của các o nhen! Cứ tự tin mà tỏa sáng, vì đẹp là quyền lợi💅",
         "Chúc các o lúc mô cũng rực rỡ như nắng sớm, chớ hề gắt gỏng, chỉ toàn tỏa sáng thôi nhennn🌞",
-        "Rứa là 8/3 tới rồi, chúc các tề ngày ni thiệt vui, nhận quà mỏi tay, nhận thương mến đầy tim, còn ai chưa có bồ thì cứ chill, vì mần chi có bồ mới vui, đúng hơm?🥰",
+        "Rứa là 20/10 tới rồi, chúc các tề ngày ni thiệt vui, nhận quà mỏi tay, nhận thương mến đầy tim, còn ai chưa có bồ thì cứ chill, vì mần chi có bồ mới vui, đúng hơm?🥰",
         "Hôm ni trời đẹp, phải chăng o đã xuống phố?😜",
       ],
     }),
@@ -268,7 +272,7 @@ function start() {
   document.getElementById("text").textContent =
     "Xin chào👋 tui là nhà chiêm tinh " +
     shaman[localStorage.getItem("shamanID")].name +
-    ', nhân dịp 8/3, tui muốn nói rằng: "' +
+    ', nhân dịp 20/10, tui muốn nói rằng: "' +
     shaman[localStorage.getItem("shamanID")].quote[
       getRandomInt(0, shaman[localStorage.getItem("shamanID")].quote.length - 1)
     ] +
